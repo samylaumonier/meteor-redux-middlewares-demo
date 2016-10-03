@@ -46,7 +46,7 @@ export const HomePageComponent = React.createClass({
                 </a>
               </li>
               <li>
-                <a href="https://atmospherejs.com/samy/meteor-redux-middlewares">
+                <a href="https://atmospherejs.com/samy/redux-middlewares">
                   Package on Atmosphere
                 </a>
               </li>
