@@ -7,13 +7,11 @@ export const HOME_POSTS_SUBSCRIPTION_READY = 'HOME_POSTS_SUBSCRIPTION_READY';
 export const HOME_POSTS_SUBSCRIPTION_CHANGED = 'HOME_POSTS_SUBSCRIPTION_CHANGED';
 
 export function loadHomePosts() {
-  return dispatch => {
-    dispatch({
-      type: HOME_POSTS_SUBSCRIPTION,
-      meteor: {
-        subscribe: () => Meteor.subscribe('home.posts'),
-        get: () => Posts.find().fetch(),
-      },
-    });
+  return {
+    type: HOME_POSTS_SUBSCRIPTION,
+    meteor: {
+      subscribe: () => Meteor.subscribe('home.posts'),
+      get: () => Posts.find().fetch(),
+    },
   };
 }
