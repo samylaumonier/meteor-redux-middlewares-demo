@@ -1,3 +1,5 @@
+import { STOP_SUBSCRIPTION } from 'meteor-redux-middlewares';
+
 import {
   HOME_POSTS_SUBSCRIPTION_READY,
   HOME_POSTS_SUBSCRIPTION_CHANGED,
@@ -6,6 +8,7 @@ import {
 const initialState = {
   ready: false,
   posts: [],
+  postsSubscriptionStopped: false,
 };
 
 export function home(state = initialState, action) {
@@ -20,6 +23,10 @@ export function home(state = initialState, action) {
         ...state,
         posts: action.payload,
       };
+    case STOP_SUBSCRIPTION:
+      return action.payload === 'home.posts'
+        ? { ...state, postsSubscriptionStopped: true }
+        : state;
     default:
       return state;
   }

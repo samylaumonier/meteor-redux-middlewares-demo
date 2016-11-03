@@ -5,16 +5,22 @@ export const HomePageComponent = React.createClass({
     user: React.PropTypes.object.isRequired,
     postsReady: React.PropTypes.bool.isRequired,
     posts: React.PropTypes.array.isRequired,
+    postsSubscriptionStopped: React.PropTypes.bool.isRequired,
     loadUser: React.PropTypes.func.isRequired,
     loadPosts: React.PropTypes.func.isRequired,
     logout: React.PropTypes.func.isRequired,
     register: React.PropTypes.func.isRequired,
+    stopPostsSubscription: React.PropTypes.func.isRequired,
   },
   componentDidMount: function () {
     this.props.loadUser();
     this.props.loadPosts();
   },
   render: function () {
+    const postsButton = this.props.postsSubscriptionStopped
+      ? <button className="btn btn-default" onClick={this.props.loadPosts}>Subscribe</button>
+      : <button className="btn btn-default" onClick={this.props.stopPostsSubscription}>Stop subscription</button>;
+
     const posts = this.props.postsReady
       ? this.props.posts.map(post => <li key={post._id}>{post.title}</li>)
       : <li>Posts loading...</li>;
@@ -65,6 +71,10 @@ export const HomePageComponent = React.createClass({
             <ul>
               {posts}
             </ul>
+            <hr/>
+            <div>
+              {postsButton}
+            </div>
           </div>
           <div className="col-md-4">
             <h1>User</h1>

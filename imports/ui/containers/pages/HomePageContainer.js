@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
+import { stopSubscription } from 'meteor/samy:redux-middlewares';
 
 import { loadUser } from '/imports/actions/user/load';
-import { loadHomePosts } from '/imports/actions/home/posts/load';
+import { loadHomePosts, HOME_POSTS_SUBSCRIPTION } from '/imports/actions/home/posts/load';
 import { logout } from '/imports/actions/user/logout';
 import { register } from '/imports/actions/user/register';
 
@@ -12,6 +13,7 @@ const mapStateToProps = state => {
     user: state.user,
     postsReady: state.home.ready,
     posts: state.home.posts,
+    postsSubscriptionStopped: state.home.postsSubscriptionStopped,
   };
 };
 
@@ -28,6 +30,9 @@ const mapDispatchToProps = dispatch => {
     },
     register: () => {
       dispatch(register());
+    },
+    stopPostsSubscription: () => {
+      dispatch(stopSubscription(HOME_POSTS_SUBSCRIPTION));
     },
   };
 };
