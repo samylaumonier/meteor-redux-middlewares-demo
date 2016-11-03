@@ -321,13 +321,6 @@ js-tokens@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-2.0.0.tgz#79903f5563ee778cc1162e6dcf1a0027c97f9cb5"
 
-koleok/meteor-redux-middlewares#temp-install:
-  name meteor-redux-middlewares
-  version "2.0.4"
-  resolved "https://codeload.github.com/koleok/meteor-redux-middlewares/tar.gz/3874d4b56d630c597ad13f2605e37e773b1fca6e"
-  dependencies:
-    sanctuary "^0.11.1"
-
 lodash-es@^4.2.1:
   version "4.16.6"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.16.6.tgz#c8552faedaa4d1d591de8da9b3980ef1c52efa08"
@@ -369,6 +362,12 @@ meteor-node-stubs@~0.2.0:
     url "^0.11.0"
     util "^0.10.3"
     vm-browserify "0.0.4"
+
+meteor-redux-middlewares@koleok/meteor-redux-middlewares#temp-install:
+  version "2.0.4"
+  resolved "https://codeload.github.com/koleok/meteor-redux-middlewares/tar.gz/62d363362c55259426eb22d9839e205c8c5c1396"
+  dependencies:
+    sanctuary "^0.11.1"
 
 miller-rabin@^4.0.0:
   version "4.0.0"

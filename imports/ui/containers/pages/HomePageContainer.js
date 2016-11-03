@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { stopSubscription } from 'meteor-redux-middlewares';
 
 import { loadUser } from '/imports/actions/user/load';
-import { loadHomePosts } from '/imports/actions/home/posts/load';
+import { loadHomePosts, HOME_POSTS_SUB } from '/imports/actions/home/posts/load';
 import { logout } from '/imports/actions/user/logout';
 import { register } from '/imports/actions/user/register';
 
@@ -29,7 +29,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(register());
   },
   stopPostsSubscription: () => {
-    dispatch(stopSubscription('home.posts'));
+    dispatch(stopSubscription(HOME_POSTS_SUB));
   },
 });
 
