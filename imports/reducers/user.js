@@ -1,4 +1,4 @@
-import { USER_CHANGED } from '/imports/actions/user/load';
+import { USER_REACTIVE_SOURCE_CHANGED } from '/imports/actions/user/load';
 
 const initialState = {
   ready: false,
@@ -6,7 +6,7 @@ const initialState = {
 
 export function user(state = initialState, action) {
   switch (action.type) {
-    case USER_CHANGED:
+    case USER_REACTIVE_SOURCE_CHANGED:
       return {
         ...action.payload,
         ready: true,

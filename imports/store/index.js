@@ -1,6 +1,6 @@
 import { Tracker } from 'meteor/tracker';
 import { applyMiddleware, createStore, compose } from 'redux';
-import createReactiveMiddlewares from 'meteor/samy:redux-middlewares';
+import createReactiveMiddlewares from 'meteor-redux-middlewares';
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 

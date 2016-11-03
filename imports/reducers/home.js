@@ -1,4 +1,4 @@
-import { STOP_SUBSCRIPTION } from 'meteor-redux-middlewares';
+import { types } from 'meteor-redux-middlewares';
 
 import {
   HOME_POSTS_SUBSCRIPTION_READY,
@@ -23,7 +23,7 @@ export function home(state = initialState, action) {
         ...state,
         posts: action.payload,
       };
-    case STOP_SUBSCRIPTION:
+    case types.STOP_SUBSCRIPTION:
       return action.payload === 'home.posts'
         ? { ...state, postsSubscriptionStopped: true }
         : state;
