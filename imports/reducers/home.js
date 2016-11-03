@@ -1,6 +1,6 @@
 import {
   HOME_POSTS_SUBSCRIPTION_READY,
-  HOME_POSTS_SUBSCRIPTION_CHANGED
+  HOME_POSTS_SUBSCRIPTION_CHANGED,
 } from '/imports/actions/home/posts/load';
 
 const initialState = {
@@ -13,12 +13,12 @@ export function home(state = initialState, action) {
     case HOME_POSTS_SUBSCRIPTION_READY:
       return {
         ...state,
-        ready: action.ready,
+        ready: action.payload.ready,
       };
     case HOME_POSTS_SUBSCRIPTION_CHANGED:
       return {
         ...state,
-        posts: action.data
+        posts: action.payload,
       };
     default:
       return state;

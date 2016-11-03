@@ -1,13 +1,10 @@
 import { Meteor } from 'meteor/meteor';
+import { actions } from 'meteor-redux-middlewares';
 
 export const USER = 'USER';
 export const USER_CHANGED = 'USER_CHANGED';
 
-export function loadUser() {
-  return {
-    type: USER,
-    meteor: {
-      get: () => Meteor.user() || {},
-    },
-  };
-}
+export const loadUser = () => actions.registerReactiveSource({
+  key: 'user',
+  get: () => Meteor.user() || {},
+});
