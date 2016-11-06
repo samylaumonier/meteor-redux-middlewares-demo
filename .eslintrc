@@ -1,0 +1,40 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "arrow-parens": 0,
+    "import/no-unresolved": 0,
+    "no-underscore-dangle": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/prefer-default-export": 0,
+    "import/no-absolute-path": 0,
+    "import/extensions": 0
+  },
+  "env": {
+    "es6": true,
+    "jest": true,
+    "meteor": true,
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    }
+  },
+  "settings": {
+    "import/core-modules": [
+      "meteor/meteor"
+    ]
+  }
+}

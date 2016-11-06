@@ -1,17 +1,14 @@
 import { Meteor } from 'meteor/meteor';
-
+import { startSubscription } from 'meteor-redux-middlewares';
 import { Posts } from '/imports/api/collections/posts';
 
-export const HOME_POSTS_SUBSCRIPTION = 'HOME_POSTS_SUBSCRIPTION';
 export const HOME_POSTS_SUBSCRIPTION_READY = 'HOME_POSTS_SUBSCRIPTION_READY';
 export const HOME_POSTS_SUBSCRIPTION_CHANGED = 'HOME_POSTS_SUBSCRIPTION_CHANGED';
+export const HOME_POSTS_SUB = 'home.posts';
 
-export function loadHomePosts() {
-  return {
-    type: HOME_POSTS_SUBSCRIPTION,
-    meteor: {
-      subscribe: () => Meteor.subscribe('home.posts'),
-      get: () => Posts.find().fetch(),
-    },
-  };
-}
+export const loadHomePosts = () =>
+  startSubscription({
+    key: HOME_POSTS_SUB,
+    subscribe: () => Meteor.subscribe(HOME_POSTS_SUB),
+    get: () => Posts.find().fetch(),
+  });

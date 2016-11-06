@@ -1,13 +1,9 @@
 import { Meteor } from 'meteor/meteor';
+import { registerReactiveSource } from 'meteor-redux-middlewares';
 
-export const USER = 'USER';
-export const USER_CHANGED = 'USER_CHANGED';
+export const USER_REACTIVE_SOURCE_CHANGED = 'USER_REACTIVE_SOURCE_CHANGED';
 
-export function loadUser() {
-  return {
-    type: USER,
-    meteor: {
-      get: () => Meteor.user() || {},
-    },
-  };
-}
+export const loadUser = () => registerReactiveSource({
+  key: 'user',
+  get: () => Meteor.user() || {},
+});
