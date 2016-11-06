@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { stopSubscription } from 'meteor-redux-middlewares';
+import { stopSubscription } from 'meteor/samy:redux-middlewares';
 
 import { loadUser } from '/imports/actions/user/load';
 import { loadHomePosts, HOME_POSTS_SUB } from '/imports/actions/home/posts/load';

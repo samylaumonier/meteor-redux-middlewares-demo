@@ -1,4 +1,4 @@
-import { STOP_SUBSCRIPTION } from 'meteor-redux-middlewares';
+import { STOP_SUBSCRIPTION } from 'meteor/samy:redux-middlewares';
 
 import {
   HOME_POSTS_SUBSCRIPTION_READY,

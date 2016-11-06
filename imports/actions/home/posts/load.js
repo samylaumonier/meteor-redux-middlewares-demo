@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { startSubscription } from 'meteor-redux-middlewares';
+import { startSubscription } from 'meteor/samy:redux-middlewares';
 import { Posts } from '/imports/api/collections/posts';
 
 export const HOME_POSTS_SUBSCRIPTION_READY = 'HOME_POSTS_SUBSCRIPTION_READY';

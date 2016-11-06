@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { registerReactiveSource } from 'meteor-redux-middlewares';
+import { registerReactiveSource } from 'meteor/samy:redux-middlewares';
 
 export const USER_REACTIVE_SOURCE_CHANGED = 'USER_REACTIVE_SOURCE_CHANGED';
 

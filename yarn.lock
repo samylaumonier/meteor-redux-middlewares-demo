@@ -973,12 +973,6 @@ meteor-node-stubs@~0.2.0:
     util "^0.10.3"
     vm-browserify "0.0.4"
 
-meteor-redux-middlewares@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/meteor-redux-middlewares/-/meteor-redux-middlewares-3.0.0.tgz#0e9b526f3b950fea233b47a4912890244a629eec"
-  dependencies:
-    sanctuary "^0.11.1"
-
 miller-rabin@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/miller-rabin/-/miller-rabin-4.0.0.tgz#4a62fb1d42933c05583982f4c716f6fb9e6c6d3d"
@@ -1188,10 +1182,6 @@ querystring@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
 
-ramda@0.21.x:
-  version "0.21.0"
-  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.21.0.tgz#a001abedb3ff61077d4ff1d577d44de77e8d0a35"
-
 randombytes@^2.0.0, randombytes@^2.0.1:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/randombytes/-/randombytes-2.0.3.tgz#674c99760901c3c4112771a31e521dc349cc09ec"
@@ -1328,17 +1318,6 @@ run-async@^0.1.0:
 rx-lite@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-3.1.2.tgz#19ce502ca572665f3b647b10939f97fd1615f102"
-
-sanctuary-def@0.6.x:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/sanctuary-def/-/sanctuary-def-0.6.0.tgz#b91d6763a1becb35e89461dea517bb01b3724885"
-
-sanctuary@^0.11.1:
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/sanctuary/-/sanctuary-0.11.1.tgz#7ee874e973e03074f57f34b5773b11089484b85a"
-  dependencies:
-    ramda "0.21.x"
-    sanctuary-def "0.6.x"
 
 sha.js@^2.3.6:
   version "2.4.5"
