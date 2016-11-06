@@ -2,12 +2,13 @@
   "name": "meteor-redux-middlewares-demo",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "lint": "./node_modules/.bin/eslint ."
   },
   "dependencies": {
     "bcrypt": "^0.8.7",
     "meteor-node-stubs": "~0.2.0",
-    "meteor-redux-middlewares": "koleok/meteor-redux-middlewares#temp-install",
+    "meteor-redux-middlewares": "^3.0.0",
     "react": "^15.3.2",
     "react-addons-pure-render-mixin": "^15.3.2",
     "react-dom": "^15.3.2",
@@ -16,5 +17,12 @@
     "redux": "^3.6.0",
     "redux-logger": "^2.6.1",
     "redux-thunk": "^2.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.9.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.6.0"
   }
 }
