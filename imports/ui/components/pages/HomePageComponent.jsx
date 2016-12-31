@@ -1,7 +1,7 @@
 import React from 'react';
 
-export const HomePageComponent = React.createClass({
-  propTypes: {
+export class HomePageComponent extends React.PureComponent {
+  static propTypes = {
     user: React.PropTypes.object.isRequired,
     postsReady: React.PropTypes.bool.isRequired,
     posts: React.PropTypes.array.isRequired,
@@ -11,12 +11,14 @@ export const HomePageComponent = React.createClass({
     logout: React.PropTypes.func.isRequired,
     register: React.PropTypes.func.isRequired,
     stopPostsSubscription: React.PropTypes.func.isRequired,
-  },
-  componentDidMount: function () {
+  };
+
+  componentDidMount() {
     this.props.loadUser();
     this.props.loadPosts();
-  },
-  render: function () {
+  }
+
+  render() {
     const postsButton = this.props.postsSubscriptionStopped
       ? <button className="btn btn-default" onClick={this.props.loadPosts}>Subscribe</button>
       : <button className="btn btn-default" onClick={this.props.stopPostsSubscription}>Stop subscription</button>;
@@ -88,5 +90,5 @@ export const HomePageComponent = React.createClass({
         </div>
       </div>
     );
-  },
-});
+  }
+}
