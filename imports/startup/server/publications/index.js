@@ -1,1 +1,2 @@
+import './items';
 import './posts';

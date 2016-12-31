@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 export class HomePageComponent extends React.PureComponent {
   static propTypes = {
@@ -16,6 +17,10 @@ export class HomePageComponent extends React.PureComponent {
   componentDidMount() {
     this.props.loadUser();
     this.props.loadPosts();
+  }
+
+  componentWillUnmount() {
+    this.props.stopPostsSubscription();
   }
 
   render() {
@@ -76,6 +81,8 @@ export class HomePageComponent extends React.PureComponent {
             <hr/>
             <div>
               {postsButton}
+              {' '}
+              <Link to="/items">Go to items list</Link>
             </div>
           </div>
           <div className="col-md-4">
