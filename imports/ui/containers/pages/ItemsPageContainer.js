@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { stopSubscription } from 'meteor-redux-middlewares';
+import { stopSubscription } from 'meteor/samy:redux-middlewares';
 
 import { loadItems, ITEMS_SUB } from '/imports/actions/items/load';
 
