@@ -16,21 +16,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  loadUser: () => {
-    dispatch(loadUser());
-  },
-  loadPosts: () => {
-    dispatch(loadHomePosts());
-  },
-  logout: () => {
-    dispatch(logout());
-  },
-  register: () => {
-    dispatch(register());
-  },
-  stopPostsSubscription: () => {
-    dispatch(stopSubscription(HOME_POSTS_SUB));
-  },
+  loadUser: () => dispatch(loadUser()),
+  loadPosts: () => dispatch(loadHomePosts()),
+  logout: () => dispatch(logout()),
+  register: () => dispatch(register()),
+  stopPostsSubscription: () => dispatch(stopSubscription(HOME_POSTS_SUB)),
 });
 
 export const HomePageContainer = connect(

@@ -1,22 +1,30 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-export const HomePageComponent = React.createClass({
-  propTypes: {
-    user: React.PropTypes.object.isRequired,
-    postsReady: React.PropTypes.bool.isRequired,
-    posts: React.PropTypes.array.isRequired,
-    postsSubscriptionStopped: React.PropTypes.bool.isRequired,
-    loadUser: React.PropTypes.func.isRequired,
-    loadPosts: React.PropTypes.func.isRequired,
-    logout: React.PropTypes.func.isRequired,
-    register: React.PropTypes.func.isRequired,
-    stopPostsSubscription: React.PropTypes.func.isRequired,
-  },
-  componentDidMount: function () {
+export class HomePageComponent extends PureComponent {
+  static propTypes = {
+    user: PropTypes.object.isRequired,
+    postsReady: PropTypes.bool.isRequired,
+    posts: PropTypes.array.isRequired,
+    postsSubscriptionStopped: PropTypes.bool.isRequired,
+    loadUser: PropTypes.func.isRequired,
+    loadPosts: PropTypes.func.isRequired,
+    logout: PropTypes.func.isRequired,
+    register: PropTypes.func.isRequired,
+    stopPostsSubscription: PropTypes.func.isRequired,
+  };
+
+  componentDidMount() {
     this.props.loadUser();
     this.props.loadPosts();
-  },
-  render: function () {
+  }
+
+  componentWillUnmount() {
+    this.props.stopPostsSubscription();
+  }
+
+  render() {
     const postsButton = this.props.postsSubscriptionStopped
       ? <button className="btn btn-default" onClick={this.props.loadPosts}>Subscribe</button>
       : <button className="btn btn-default" onClick={this.props.stopPostsSubscription}>Stop subscription</button>;
@@ -74,6 +82,8 @@ export const HomePageComponent = React.createClass({
             <hr/>
             <div>
               {postsButton}
+              {' '}
+              <Link to="/items">Go to items list</Link>
             </div>
           </div>
           <div className="col-md-4">
@@ -88,5 +98,5 @@ export const HomePageComponent = React.createClass({
         </div>
       </div>
     );
-  },
-});
+  }
+}
