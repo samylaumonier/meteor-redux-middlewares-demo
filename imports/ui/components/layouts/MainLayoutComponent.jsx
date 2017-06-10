@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const MainLayoutComponent = ({ children }) => (
   <div className="container">
@@ -7,5 +8,9 @@ export const MainLayoutComponent = ({ children }) => (
 );
 
 MainLayoutComponent.propTypes = {
-  children: React.PropTypes.node,
+  children: PropTypes.node,
+};
+
+MainLayoutComponent.defaultProps = {
+  children: null,
 };

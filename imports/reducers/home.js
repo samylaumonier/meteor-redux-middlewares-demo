@@ -18,6 +18,7 @@ export function home(state = initialState, action) {
       return {
         ...state,
         ready: action.payload.ready,
+        postsSubscriptionStopped: false,
       };
     case HOME_POSTS_SUBSCRIPTION_CHANGED:
       return {
