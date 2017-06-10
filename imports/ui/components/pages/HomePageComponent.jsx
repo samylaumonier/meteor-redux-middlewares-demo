@@ -1,17 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-export class HomePageComponent extends React.PureComponent {
+export class HomePageComponent extends PureComponent {
   static propTypes = {
-    user: React.PropTypes.object.isRequired,
-    postsReady: React.PropTypes.bool.isRequired,
-    posts: React.PropTypes.array.isRequired,
-    postsSubscriptionStopped: React.PropTypes.bool.isRequired,
-    loadUser: React.PropTypes.func.isRequired,
-    loadPosts: React.PropTypes.func.isRequired,
-    logout: React.PropTypes.func.isRequired,
-    register: React.PropTypes.func.isRequired,
-    stopPostsSubscription: React.PropTypes.func.isRequired,
+    user: PropTypes.object.isRequired,
+    postsReady: PropTypes.bool.isRequired,
+    posts: PropTypes.array.isRequired,
+    postsSubscriptionStopped: PropTypes.bool.isRequired,
+    loadUser: PropTypes.func.isRequired,
+    loadPosts: PropTypes.func.isRequired,
+    logout: PropTypes.func.isRequired,
+    register: PropTypes.func.isRequired,
+    stopPostsSubscription: PropTypes.func.isRequired,
   };
 
   componentDidMount() {

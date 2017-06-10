@@ -1,12 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-export class ItemsPageComponent extends React.PureComponent {
+export class ItemsPageComponent extends PureComponent {
   static propTypes = {
-    ready: React.PropTypes.bool.isRequired,
-    items: React.PropTypes.array.isRequired,
-    loadItems: React.PropTypes.func.isRequired,
-    stopItemsSubscription: React.PropTypes.func.isRequired,
+    ready: PropTypes.bool.isRequired,
+    items: PropTypes.array.isRequired,
+    loadItems: PropTypes.func.isRequired,
+    stopItemsSubscription: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
